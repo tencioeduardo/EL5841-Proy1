@@ -1,0 +1,4 @@
+
+# ===== qemu: sobrescribe lo anterior =====
+MACHINE = "qemuarm64"
+IMAGE_FSTYPES = "ext4"

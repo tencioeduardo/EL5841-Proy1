@@ -1,0 +1,45 @@
+
+# ===== control-acceso: inicio =====
+# Máquina destino (BSP de meta-raspberrypi)
+MACHINE ?= "raspberrypi4-64"
+
+# systemd como init (necesario para el servicio de la aplicación)
+INIT_MANAGER = "systemd"
+
+# ---- Cámara: "usb" o "csi" (definir con el equipo) ----
+# usb → v4l2src, sin libcamera.  csi → agrega libcamera + libcamerasrc.
+CAMARA ?= "usb"
+# Si es CSI, además activar el sensor en config.txt. Revisar las opciones exactas en
+# meta-raspberrypi/docs/extra-build-config.md (sección de cámara) y usar UNA, p. ej.:
+# RPI_EXTRA_CONFIG = "dtoverlay=imx219"
+# NO usar VIDEO_CAMERA = "1": activa el stack legacy, incompatible con libcamera.
+
+# Descargas y caché compartidas entre build/ y build-qemu/
+DL_DIR = "/workdir/downloads"
+SSTATE_DIR = "/workdir/sstate-cache"
+
+# Paralelismo (calculado por scripts/hilos.sh). Si el build muere con "Killed",
+# baja primero BB_NUMBER_THREADS.
+BB_NUMBER_THREADS = "@BB@"
+PARALLEL_MAKE = "-j @PM@"
+
+# rm_work desactivado: hay disco de sobra y así puedes inspeccionar tmp/work/
+# para entender qué hace cada receta. Activarlo si el disco baja de ~60 GB libres.
+#INHERIT += "rm_work"
+
+# Licencia del firmware Wi-Fi/BT de la Pi (sin esto el build falla)
+LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
+
+# Consola serial en GPIO14/15 (config.txt)
+ENABLE_UART = "1"
+
+# Formatos de salida: .wic.bz2 para grabar, .bmap para grabar rápido con bmaptool
+IMAGE_FSTYPES = "wic.bz2 wic.bmap"
+
+# OPCIONAL: caché remota del Yocto Project, puede acortar el primer build.
+# Si da errores de red o de hashserv, vuelve a comentarlo.
+#BB_SIGNATURE_HANDLER = "OEEquivHash"
+#BB_HASHSERVE = "auto"
+#BB_HASHSERVE_UPSTREAM = "wss://hashserv.yoctoproject.org/ws"
+#SSTATE_MIRRORS ?= "file://.* http://sstate.yoctoproject.org/all/PATH;downloadfilename=PATH"
+# ===== control-acceso: fin =====
