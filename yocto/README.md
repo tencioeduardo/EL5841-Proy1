@@ -183,16 +183,15 @@ La decodificación JPEG por software reduce la tasa en ~9 fps.
 
 ### 6.2 Problema identificado: codec por hardware ausente
 
-El elemento `v4l2h264enc` no estaba disponible en la primera imagen. Diagnóstico:
+El elemento `v4l2h264enc` no estaba disponible en la primera imagen. Diagnóstico en la Pi:
 
 1. El plugin `libgstvideo4linux2.so` está instalado y registra `v4l2src`, pero ningún elemento de codificación ni decodificación.
 2. No existen los nodos `/dev/video10-12` del codec.
-3. `modprobe bcm2835-codec` falla: el módulo no existe.
-4. `/lib/modules/<versión>/kernel/drivers/media/` no contiene el directorio `platform/`.
+3. `modprobe bcm2835-codec` falla: el módulo no está instalado en la imagen.
 
-**Causa:** el driver `bcm2835-codec` no se compilaba en el kernel. El plugin V4L2 de GStreamer registra los elementos de codec solo si encuentra un dispositivo *memory-to-memory* al iniciar.
+**Causa:** el plugin V4L2 de GStreamer registra los elementos de codec solo si encuentra un dispositivo *memory-to-memory* al iniciar. Sin el módulo `bcm2835-codec`, ese dispositivo no existe.
 
-**Corrección:** el `.bbappend` del kernel en `meta-control-acceso` activa `CONFIG_VIDEO_BCM2835_CODEC=m`, y el grupo de video incluye `kernel-module-bcm2835-codec`. **Pendiente de compilación y validación en hardware.**
+**Corrección:** el grupo de video incluye ahora `kernel-module-bcm2835-codec`. Se está verificando si el módulo ya se compilaba y solo faltaba instalarlo, o si además hay que activarlo en la configuración del kernel mediante el `.bbappend` de `recipes-kernel/`. **Pendiente de validación en hardware.**
 
 ---
 
@@ -222,3 +221,9 @@ El elemento `v4l2h264enc` no estaba disponible en la primera imagen. Diagnóstic
 | Sin video en el monitor | Puerto HDMI incorrecto | Usar HDMI0 |
 
 ---
+
+## 9. Documentación relacionada
+
+| Documento | Contenido |
+|---|---|
+| `BITACORA.md` | Registro de la sesión de pruebas en hardware y el diagnóstico del codec |
