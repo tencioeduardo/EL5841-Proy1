@@ -8,7 +8,7 @@ inherit packagegroup
 # Separado por área: la imagen elige cuáles instalar
 PACKAGES = "${PN}-base ${PN}-video ${PN}-csi ${PN}-gpio ${PN}-debug"
 
-RDEPENDS:${PN}-base = "python3-core python3-pygobject python3-numpy bash"
+RDEPENDS:${PN}-base = "python3-core python3-pygobject python3-numpy bash sistema-config"
 
 # ---- Video: lo ajusta el responsable de GStreamer según su pipeline ----
 # Plugins usados en prueba_hw.sh y dónde viven:

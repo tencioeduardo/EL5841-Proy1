@@ -20,3 +20,11 @@ do_install() {
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/control-acceso.service ${D}${systemd_system_unitdir}/
 }
+
+# Directorio de evidencia en la partición de datos
+SRC_URI += "file://control-acceso.tmpfiles"
+do_install:append() {
+    install -d ${D}${nonarch_libdir}/tmpfiles.d
+    install -m 0644 ${WORKDIR}/control-acceso.tmpfiles ${D}${nonarch_libdir}/tmpfiles.d/control-acceso.conf
+}
+FILES:${PN} += "${nonarch_libdir}/tmpfiles.d"

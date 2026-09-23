@@ -1,0 +1,18 @@
+[Unit]
+Description=Expandir la partición de datos al tamaño de la microSD
+DefaultDependencies=no
+# Después de que la raíz sea escribible (para la marca) y exista la partición
+After=systemd-remount-fs.service dev-mmcblk0p3.device
+Requires=dev-mmcblk0p3.device
+# Antes de montar /data: la partición debe estar desmontada para expandirla
+Before=data.mount
+# Solo la primera vez
+ConditionPathExists=!/var/lib/expandir-datos.hecho
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/expandir-datos
+RemainAfterExit=yes
+
+[Install]
+WantedBy=local-fs.target

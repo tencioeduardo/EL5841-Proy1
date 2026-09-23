@@ -1,6 +1,7 @@
 [Unit]
 Description=Control de acceso con video
 After=network.target
+RequiresMountsFor=/data
 
 [Service]
 ExecStart=/usr/bin/control-acceso

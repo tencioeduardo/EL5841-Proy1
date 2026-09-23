@@ -21,3 +21,6 @@ IMAGE_INSTALL = " \
 
 # 512 MB libres extra en el rootfs (en KB) para grabaciones de prueba
 IMAGE_ROOTFS_EXTRA_SPACE = "524288"
+
+# Tabla de particiones propia: arranque + raíz + datos (/data)
+WKS_FILE = "control-acceso.wks"
