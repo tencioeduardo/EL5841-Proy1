@@ -1,0 +1,15 @@
+2026-09-28T09:21:37	INICIO	Receptor RTP en puerto 5000
+2026-09-28T09:22:09	TIMEOUT	Caída de recepción RTP
+2026-09-28T09:22:09	RECONECTANDO	Iniciando ciclo por timeout
+2026-09-28T09:24:07	DETENCION	Cierre solicitado (SIGTERM/SIGINT)
+2026-09-28T09:24:07	FIN	Sesión terminada
+2026-09-28T09:24:33	INICIO	Receptor RTP en puerto 5000
+2026-09-28T09:25:00	TIMEOUT	Caída de recepción RTP
+2026-09-28T09:25:00	RECONECTANDO	Iniciando ciclo por timeout
+2026-09-28T09:25:15	DETENCION	Cierre solicitado (SIGTERM/SIGINT)
+2026-09-28T09:25:15	FIN	Sesión terminada
+2026-09-28T09:33:12	INICIO	Receptor RTP en puerto 5000
+2026-09-28T09:33:26	TIMEOUT	Caída de recepción RTP
+2026-09-28T09:33:26	RECONECTANDO	Iniciando ciclo por timeout
+2026-09-28T10:40:43	DETENCION	Cierre solicitado (SIGTERM/SIGINT)
+2026-09-28T10:40:43	FIN	Sesión terminada
