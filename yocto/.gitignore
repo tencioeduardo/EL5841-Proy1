@@ -1,0 +1,7 @@
+poky/
+meta-raspberrypi/
+meta-openembedded/
+build/
+build-qemu/
+downloads/
+sstate-cache/

@@ -1,0 +1,2 @@
+# Crea el directorio de evidencia en la partición de datos al arrancar.
+d /data/evidencia 0755 root root -
