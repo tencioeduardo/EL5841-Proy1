@@ -1,21 +1,25 @@
 # Bitácora Individual de Trabajo
 
-**Curso:** Sistemas Empotrados  
-**Proyecto:** Sistema Embebido de Control de Acceso con GStreamer y Yocto Linux  
-
 ## Registro de Actividades
 
-| Fecha | Integrante | Tarea / Actividad Realizada | Horas | Resultado / Observaciones |
-| :--- | :--- | :--- | :---: | :--- |
-| YYYY-MM-DD | [Nombre] | Investigación de tuberías GStreamer y `gst-launch-1.0`. | 3.0 | Definición del grafo base de captura y codificación. |
-| YYYY-MM-DD | [Nombre] | Desarrollo de `pipeline.py` y callback `appsink` para BGR. | 4.0 | Procesamiento de cuadros BGR exitoso en Python. |
-| YYYY-MM-DD | [Nombre] | Implementación de `retention.py` para gestión de evidencia. | 3.0 | Verificación exitosa mediante script de auto-prueba. |
-| YYYY-MM-DD | [Nombre] | Integración de detección QR (OpenCV) y control de acceso. | 4.0 | Filtrado de códigos estáticos y pruebas de enfriamiento. |
-| YYYY-MM-DD | [Nombre] | Desarrollo del servidor TCP y cliente interactivo en Host. | 5.0 | Consola dinámica con eventos UDP en tiempo real. |
-| YYYY-MM-DD | [Nombre] | Configuración de Yocto Project y capas BSP para Raspberry Pi 4. | 6.0 | Compilación de imagen base e inclusión de recetas Python. |
-| YYYY-MM-DD | [Nombre] | Pruebas de integración final sobre hardware real (Raspberry Pi 4). | 4.0 | Validación de aceleración `v4l2h264enc` y actuador LED. |
+* **José Eduardo Tencio Solano:**
 
-## Resumen de Horas Invertidas
+| Fecha | Actividades | Modalidad |
+| :---: | :--- | :---: |
+| 07/09/2026 | Análisis del proyecto, división de tareas y realizar plan de trabajo | Presencial |
+| 10/09/2026 | Borrador requisitos I | Virtual |
+| 16/09/2026 | Creación del pipeline inicial | Virtual |
+| 17/09/2026 | Pruebas del pipeline gstreamer en el host y pruebas de imagen de Yocto en hardware | Presencial |
+| 20/09/2026 | Corrección y pruebas del pipeline basandose en la revisión del avance | Virtual |
+| 28/09/2026 | Pruebas del pipeline integrado en la Raspberry Pi|Presencial |  
+| 30/09/2026 | Desarrollo de la aplicación de vigilancia. Probada en el host | Virtual |
+| 02/10/2026 | Pruebas de la aplicación en la Raspberry Pi | Presencial|
+| 04/10/2026 | Documentación y actualización del repositorio |Virtual|
 
-* **[Nombre del Integrante 1]:** XX horas.
-* **[Nombre del Integrante 2]:** XX horas.
+* **[Nombre del Integrante 2]:**
+
+| Fecha | Actividades | Modalidad |
+| :---: | :--- | :---: |
+| DD/MM/2026 | | |
+| DD/MM/2026 | | |
+| DD/MM/2026 | | |
