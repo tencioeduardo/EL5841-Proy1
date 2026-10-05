@@ -5,7 +5,7 @@
 **Curso:** Taller de Sistemas Embebidos 
 **Profesor**  Dr. Ing. Johan Carvajal Godínez  
 **Integrantes:**  
-* [Nombre del Estudiante 1]
+* Luis Diego García Rojas
 * José Eduardo Tencio Solano
 
 ## 1. Visión General del Proyecto
@@ -104,3 +104,9 @@ De acuerdo con la normativa del curso, se declara el uso de herramientas de Inte
   * Estructuración del módulo de retención de evidencia (`retention.py`).
   * Desarrollo del nodo de Borde (`app_borde.py`): Integración del reconocimiento de códigos QR en tiempo real con OpenCV, control de enfriamiento (*cooldown*) para lecturas repetidas, persistencia de usuarios en archivos JSON y abstracción del actuador de acceso.
   * Desarrollo del Puesto de Vigilancia (`puesto_vigilancia.py`): Lógica de conmutación automática de video (RTP / Standby "SIN SEÑAL"), interfaz de consola dinámica con auto-refresco ante eventos en tiempo real y menú inicial interactivo para selección de entorno de red (Loopback vs. Raspberry Pi).
+    * Apoyo en la configuración del entorno de compilación de Yocto en Docker (`crops/poky`) y en la automatización del build y del flasheo de la imagen.
+  * Orientación en la estructura de la capa `meta-control-acceso`: recetas de imagen y de la aplicación, *packagegroups*, servicio systemd, partición de datos `/data`, directorio de evidencia y sincronización horaria (NTP).
+  * Apoyo en el diagnóstico del codec H.264 por hardware (`v4l2h264enc`), a partir de las pruebas realizadas en la Raspberry Pi.
+  * Revisión del pipeline para su ejecución en la Raspberry Pi y sugerencias de ajuste: *capsfilter* del codificador, controles V4L2, GOP según la tasa real medida y cierre ordenado de los segmentos de evidencia.
+  * Apoyo en la elaboración de scripts de verificación en hardware y en la interpretación de las mediciones de rendimiento.
+  * Apoyo en la redacción y estructuración de la documentación técnica.
